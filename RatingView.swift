@@ -17,6 +17,7 @@ struct RatingView: View {
     @State var offColor: Color = Color.gray
     @State var separationSpacing: CGFloat = 10
     @State var scale: Image.Scale = .medium
+    var onChanged: (Int) -> Void
     
     var body: some View {
         HStack(spacing: separationSpacing) {
@@ -24,6 +25,7 @@ struct RatingView: View {
                 imageFor(number: k)
                     .onTapGesture {
                         value = k
+                        onChanged(value + 1)
                     }
             }
         }
@@ -36,6 +38,8 @@ struct RatingView: View {
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView(value: 3, separationSpacing: 8)
+        RatingView(value: 3, separationSpacing: 8) { val in
+            
+        }
     }
 }

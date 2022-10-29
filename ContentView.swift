@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        RatingView(value: 3)
+        RatingView(value: 3) { k in
+            print(k)
+        }
     }
 }
 
