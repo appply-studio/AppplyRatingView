@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RatingView: View {
+struct AppplyRatingView: View {
     @State var maximum: Int = 5
     @State var minimum: Int = 0
     @State var value: Int
@@ -38,7 +38,7 @@ struct RatingView: View {
 
 struct RatingView_Previews: PreviewProvider {
     static var previews: some View {
-        RatingView(value: 3, separationSpacing: 8) { val in
+        AppplyRatingView(value: 3, separationSpacing: 8) { val in
             
         }
     }
